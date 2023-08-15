@@ -1,0 +1,21 @@
+{
+  "name": "stress-journal-website",
+  "version": "1.0.0",
+  "description": "The Stress Journal Website is a web application that provides users with valuable tools to effectively manage and reduce stress in their daily lives. The website will allow users to record their daily stress journal.",
+  "main": "app.js",
+  "dependencies": {
+    "express-session": "^1.17.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.29.4",
+    "on-headers": "^1.0.2",
+    "parseurl": "^1.3.3",
+    "random-bytes": "^1.0.0",
+    "uid-safe": "^2.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guo Fan",
+  "license": "ISC"
+}
