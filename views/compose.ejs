@@ -1,0 +1,83 @@
+<%- include("partials/header"); -%>
+<div class="container">
+  <h1 class="text-center">Today's Journal</h1>
+  <form class="mt-4" action="/compose" method="POST">
+    <div class="form-group">
+      <label for="stress-level">1. How stressed do you feel today?</label>
+      <div class="star-rating">
+        <input type="radio" id="star1" name="stressLevel" value="1" required/>
+        <label for="star1">😭 Extreme</label>
+        <input type="radio" id="star2" name="stressLevel" value="2" required/>
+        <label for="star2">😩 Stressed</label>
+        <input type="radio" id="star3" name="stressLevel" value="3" required/>
+        <label for="star3">🙁 Uneasy</label>
+        <input type="radio" id="star4" name="stressLevel" value="4" required/>
+        <label for="star4">🙂 Content</label>
+        <input type="radio" id="star5" name="stressLevel" value="5" required/>
+        <label for="star5">😆 Empowered</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="stressors">2. What are the stressors you're experiencing?</label>
+      <textarea class="form-control" id="stressors" name="stressors" rows="3" style="resize: both;"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="stress-relief-methods">3. Which methods have you used to relieve stress?</label>
+      <div class="checkbox-group">
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Relaxation techniques">
+    <img src="/images/lotus.png" alt="Image 1">
+    Relaxation techniques
+    <span class="option-description">Relaxation techniques help calm your mind and body, such as deep breathing, meditation, or progressive muscle relaxation.</span>
+  </label>
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Exercise and physical activity">
+    <img src="/images/exercise.png" alt="Image 1">
+    Exercise and physical activity
+    <span class="option-description">Exercise and physical activity are great ways to reduce stress. They help release endorphins, improve mood, and boost energy levels.</span>
+  </label>
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Time management">
+    <img src="/images/time.png" alt="Image 1">
+    Time management
+    <span class="option-description">Time management involves organizing your tasks and priorities effectively, allowing you to accomplish more in less time and reduce stress.</span>
+  </label>
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Engaging in hobbies and interests">
+    <img src="/images/mental-health.png" alt="Image 1">
+    Engaging in hobbies and interests
+    <span class="option-description">Engaging in hobbies and interests provides a break from stress and allows you to focus on activities you enjoy, promoting relaxation and enjoyment.</span>
+  </label>
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Setting boundaries">
+    <img src="/images/area.png" alt="Image 1">
+    Setting boundaries
+    <span class="option-description">Setting boundaries means establishing limits on what you can and cannot do, ensuring that you prioritize self-care and avoid overcommitting yourself.</span>
+  </label>
+  <label class="option-container">
+    <input type="checkbox" name="stressReliefMethods" value="Seeking professional help">
+    <img src="/images/help-desk.png" alt="Image 1">
+    Seeking professional help
+    <span class="option-description">Seeking professional help involves reaching out to a therapist, counselor, or mental health professional to gain support and guidance in managing stress.</span>
+  </label>
+</div>
+
+    </div>
+    <div class="form-group">
+      <label for="stress-relief-percentage">4. How much stress relief did these methods provide?</label>
+      <input type="range" class="form-control" id="stress-relief-percentage" name="stressReliefPercentage" min="0" max="100" step="1" value="0" oninput="out.value=value" required>
+      <output id="out">0</output>
+    </div>
+    <button type="submit" id="btn-compose" class="btn btn-primary">Submit</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </form>
+</div>
+<script src="/scripts/optionDescription.js"></script>
+
+
+<%- include("partials/footer"); -%>

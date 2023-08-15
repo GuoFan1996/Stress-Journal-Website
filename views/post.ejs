@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+<div >
+  <h1 class="text-center">Today's Journal</h1>
+  <div class="post">
+    <h1><%= post.date %></h1>
+    <p>Stress Level:<br /> <p class="answer">
+      <%= stressLevel %>
+    </p></p>
+    <p>Stressors:<br /> <p class="answer">
+      <%= stressors %>
+    </p></p>
+    <p>Stress Relief Methods:<br /> <p class="answer">
+      <%= stressReliefMethods.join(', ') %>
+    </p></p>
+    <p>Stress Relief Percentage: <br /><p class="answer">
+      <%= stressReliefPercentage %>%
+    </p></p>
+  </div>
+</div>
+<%- include("partials/footer"); -%>

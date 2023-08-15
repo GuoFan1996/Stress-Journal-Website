@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<% if (req.session.loggedInUser) { %>
+  <p>Hi, <%= req.session.loggedInUser %>!</p>
+  <br />
+  <div class="text-center">
+    <a href="/compose" class="btn-compose">Compose Today's Journal</a>
+  </div>
+<% } else { %>
+  <p><%= startingContent %></p>
+<% } %>
+
+<% if (typeof req.session.currentPosts !== 'undefined' && req.session.currentPosts.length > 0) { %>
+  <% req.session.currentPosts.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(function(post) { %>
+    <div class="postMini">
+      <h3><%= post.date %></h3>
+      <p>Stress Level: <%= post.stressLevel %></p>
+      <a href="/posts/<%= post._id %>">Read More</a>
+    </div>
+    <br />
+  <% }) %>
+<% } %>
+
+<%- include("partials/footer"); -%>
